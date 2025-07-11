@@ -1,3 +1,14 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 :root {
   /* colours */
   --white: #ffffff;
@@ -98,8 +109,11 @@ img {
 .black-button:hover {
   background: #966f2c;
 }
-.button:focus {
-  outline: none;
+.button:focus-visible,
+.nav-links a:focus-visible {
+  outline: 2px dashed var(--gold);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 /* header & nav */
@@ -213,6 +227,8 @@ header {
 /* hero */
 .hero {
   position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out both;
   min-height: 450px;
   padding: 2rem 1.25rem;
   background: url("../images/hero-background.jpg") center/cover no-repeat;
@@ -703,4 +719,43 @@ footer {
   .hero .button {
     width: 100%;
   }
+}
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.back-to-top:focus-visible {
+  outline: 2px dashed var(--black);
+  outline-offset: 4px;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

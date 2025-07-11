@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body>
+  <body id="top">
     <a class="skip-link" href="#main">Skip to main content</a>
     <a class="skip-link" href="#navigation">Skip to navigation</a>
 
@@ -25,7 +25,7 @@
           />
         </a>
 
-        <nav id="navigation" aria-label="Main">
+        <nav id="navigation" aria-label="Main navigation">
           <ul class="nav-links">
             <li><a href="#about">About Us</a></li>
             <li><a href="#menu">Menu</a></li>
@@ -43,7 +43,7 @@
         </button>
       </div>
 
-      <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation">
+      <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
         <a href="#about">About Us</a>
         <a href="#menu">Menu</a>
         <a href="#locations">Locations</a>
@@ -88,7 +88,12 @@
 
         <div class="icon-grid">
           <article class="icon-card">
-            <img src="images/fair-trade.svg" alt="" width="80" height="80" />
+            <img
+              src="images/fair-trade.svg"
+              alt="Fair trade icon"
+              width="80"
+              height="80"
+            />
             <h3>Fair Trade Coffee</h3>
             <p>
               We build direct relationships with the farmers and producers who
@@ -99,7 +104,7 @@
           <article class="icon-card">
             <img
               src="images/local-baked-goods.svg"
-              alt=""
+              alt="Icon of locally baked goods"
               width="80"
               height="80"
             />
@@ -112,7 +117,7 @@
           <article class="icon-card">
             <img
               src="images/made-with-love.svg"
-              alt=""
+              alt="Heart icon"
               width="80"
               height="80"
             />
@@ -166,10 +171,13 @@
               Founded with a passion for quality brews and a commitment to
               fostering genuine connections, we embarked on this journey with a
               vision to create a warm and inviting space for coffee enthusiasts
-              and casual patrons alike.</p> <br> My Coffee House quickly became a
-              cherished gathering spot, where the rich aroma of freshly ground
-              coffee beans mingled with the laughter of friends and the tapping
-              of keyboards from those seeking a cozy workspace.
+              and casual patrons alike.
+            </p>
+            <p>
+              My Coffee House quickly became a cherished gathering spot, where
+              the rich aroma of freshly ground coffee beans mingled with the
+              laughter of friends and the tapping of keyboards from those
+              seeking a cozy workspace.
             </p>
             <a href="#" class="button black-button">Learn more</a>
           </div>
@@ -186,6 +194,7 @@
 
           <div class="testi-grid">
             <article class="testi-card">
+              <h3 class="visually-hidden">Testimonial by Jane D</h3>
               <img
                 src="images/testimonial-1.jpeg"
                 alt="Woman drinking coffee"
@@ -200,6 +209,7 @@
             </article>
 
             <article class="testi-card">
+              <h3 class="visually-hidden">Testimonial by Scott S</h3>
               <img
                 src="images/testimonial-2.jpeg"
                 alt="Man working in coffee shop"
@@ -214,6 +224,7 @@
             </article>
 
             <article class="testi-card">
+              <h3 class="visually-hidden">Testimonial by Susie F</h3>
               <img
                 src="images/testimonial-3.jpeg"
                 alt="Woman smiling with laptop"
@@ -231,8 +242,23 @@
       </section>
     </main>
 
-    <footer><p>© My Coffee Company 2025</p></footer>
+    <footer><p>&copy; My Coffee Company 2025</p></footer>
+
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
 
     <script src="js/menu.js"></script>
+
+    <script>
+      const backToTopBtn = document.querySelector(".back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add("show");
+        } else {
+          backToTopBtn.classList.remove("show");
+        }
+      });
+    </script>
   </body>
 </html>
